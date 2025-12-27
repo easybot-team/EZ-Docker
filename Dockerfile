@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM mcr.microsoft.com/dotnet/runtime:8.0
 
 WORKDIR /app
 
