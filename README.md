@@ -13,20 +13,17 @@ docker pull 123165/ez-docker:latest
 docker run -d \
   --name ez-docker \
   -p 5000:5000 -p 26990:26990 \
-  -e ASPNETCORE_URLS="http://0.0.0.0:5000;http://0.0.0.0:26990" \
   --restart unless-stopped \
   123165/ez-docker:latest
 ```
 说明：
 - `-p HOST:CONTAINER`：端口映射，宿主机访问 `http://localhost:5000` 将转发到容器内的 5000。
-- `ASPNETCORE_URLS` 环境变量用于强制 ASP.NET Core / Kestrel 绑定到 0.0.0.0，避免应用只监听 `127.0.0.1` 导致宿主无法访问。
 - `--restart unless-stopped`：容器崩溃或宿主重启时自动重启。
 
 ## 3. 前台运行（用于调试）
 ```bash
 docker run --rm -it \
   -p 5000:5000 -p 26990:26990 \
-  -e ASPNETCORE_URLS="http://0.0.0.0:5000;http://0.0.0.0:26990" \
   123165/ez-docker:latest
 ```
 `--rm`：容器退出后自动删除，适合临时调试。
