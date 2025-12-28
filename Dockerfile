@@ -8,4 +8,6 @@ RUN chmod +x /app/EasyBot \
     && chmod +x /app/EasyBot.WebUI \
     && chmod +x /app/EasyBot.WebUI.Updater
 
+EXPOSE 5000 26990
+
 CMD ["./EasyBot"]
