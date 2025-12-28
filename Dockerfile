@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     fonts-noto-color-emoji ca-certificates xdg-utils libdbus-1-3 libappindicator3-1 \
     libasound2t64 libstdc++6 libc6 libgcc-s1 libgdk-pixbuf2.0-0 \
     libglib2.0-0 libexpat1 \
-    gconf2 libgconf2-common \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
