@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libasound2 libstdc++6 libc6 libgcc-s1 libgdk-pixbuf2.0-0 \
     libglib2.0-0 libexpat1 \
     \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
     && ldconfig
 
 WORKDIR /app
